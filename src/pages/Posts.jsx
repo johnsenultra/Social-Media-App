@@ -5,14 +5,14 @@ import {
    CardContent
 } from "@mui/joy"
 
-function Posts() {
+function Posts({user_name, body, date_posted}) {
 
    return (
       <Card sx={{margin: '10px', boxShadow: 1, border: '1px solid #000000', borderRadius: 5}}>
          <CardContent>
             <Box >
-               <Typography>john_doe <span>time.date</span></Typography>
-               <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi totam quibusdam rem labore quia inventore ipsa libero! Illum ipsa ducimus in facere! Tempora totam harum recusandae aut, natus qui illum!</Typography>
+               <Typography>{user_name} <span>{date_posted}</span></Typography>
+               <Typography>{body}</Typography>
             </Box>
          </CardContent>
       </Card>
