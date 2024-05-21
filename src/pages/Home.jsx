@@ -13,10 +13,12 @@ import {
    Stack,
    Grid,
    Input,
+   Card,
 } from "@mui/joy";
 import LeftSideBar from "./Left";
 import Posts from "./Posts";
 import { pink } from "@mui/material/colors";
+import ResponsiveMenu from "./Left";
 
 function Home() {
 
@@ -44,54 +46,76 @@ function Home() {
       <ThemeProvider>
          <CssVarsProvider>
             <Container>
-               <Grid container sx={{
-               }}>
+               <Grid container>
 
                   {/* Left Sidebar content */}
-                  <Grid xs={12} sm={3} style={{ maxHeight: '100vh', width: '100vw%', overflow: 'auto' }}>
-                     <Box>
-                        <Stack sx={{
-                           padding: '10px',
-                           margin: '5px',
-                        }}>
-                           <Grid container spacing={1}>
-                              <Grid sx={3} >
-                                 <Avatar />
-                              </Grid>
-                              <Grid sx={3} overflow={ 'auto' }>
-                                 <Typography fontWeight={'bold'}>{userProfile.name}</Typography>
-                                 <Typography fontStyle={'italic'}>{userProfile.email}</Typography>
-                              </Grid>
-                              <Grid sx={3}>
-                                 <LeftSideBar/>
-                              </Grid>
-                           </Grid>
-                        </Stack>
+                  <Grid xs={12} sm={4} sx={{ marginTop: '10px', marginRight: '5px' }}>
+                     <Grid item>
+                        <Box sx={{ boxShadow: 5,  backgroundColor: '#181818', borderRadius: '8px', width: '100%' }}>
+                           <Box sx={{
+                              display: 'flex',
+                              justifyContent: 'space-between',
+                              paddingY: '10px',
+                              
+                           }}>
+                              <Box sx={{ 
+                                 display: 'flex'
+                              }}>
+                                 <Avatar sx={{ 
+                                    alignSelf: 'center',
+                                    marginX: '5px',
+                                 }} />
+                                 <Box  sx={{ display: 'flex', flexDirection: 'column', marginY: '' }}>
+                                    <Typography fontWeight={'bold'}>{userProfile.name}</Typography>
+                                    <Typography fontStyle={'italic'}>{userProfile.email}</Typography>
+                                 </Box>
+                                 
+                              </Box>
+                              <Box sx={{ display: 'flex', justifyContent: 'right', marginY: '3px', marginRight: '15px' }}>
+                                 <LeftSideBar  />
+                              </Box>
+                           </Box>
+                        </Box>
+                     </Grid>
+
+
+                     {/* Other option here */}
+                     <Box sx={{ 
+                        maxHeight: '100vh', 
+                        overflow: 'hidden',
+                        display: { xs: 'none', sm: 'block' }
+                     }}>
+                        <Typography level="h1">Trends in PH!</Typography>
                      </Box>
 
                   </Grid>
 
                   {/* Main Content */}
-                  <Grid xs={12} sm={6} sx={{ maxHeight: '100vh', overflow: 'auto'}}>
-                     <Typography>Tweet Post Here!</Typography>
-                     <Input type="text" placeholder="What's in your mind?"></Input>
-                     <Button sx={{ margin: 1, display: "flex", alignItems: "end", justifyContent: "center"}}>Post</Button>
-                     
-                     <Box sx={{ backgroundColor: '#181818', paddingY: '5px' }}>
+                  <Grid sm={6} sx={{ maxHeight: '100vh', overflow: 'hidden'}}>
+
+                     <Box sx={{ 
+                        backgroundColor: '#181818',
+                        marginBottom: '10px', 
+                        marginTop: '10px', 
+                        padding: '10px 5px', 
+                        borderRadius: '8px'
+                        }}>
+                        <Input sx={{ marginX: '5px' }} type="text" placeholder="What's in your mind?"></Input>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px' }}>
+                          <Button sx={{ width: '55%'}}>Post</Button>
+                        </Box>
+                     </Box>
+
+                     <Box sx={{ backgroundColor: '#181818', paddingY: '3px', borderRadius: '8px' }}>
                         <Posts />
                         <Posts />
                         <Posts />
                      </Box>
                   </Grid>
-
-                  {/* Right Sidebar content optional */}
-                  <Grid xs={12} sm={3} style={{ maxHeight: '100vh', overflow: 'hidden' }}>
-                     <Typography level="h1">Trends in PH!</Typography>
-                  </Grid>
                </Grid>
                {/* Media Query for screens below 500px */}
                   <style >{`
-                     @media (max-width: 500px) {
+                     @media (max-width: 800px) {
                         [style*="maxHeight"] {
                         display: none;
                         }

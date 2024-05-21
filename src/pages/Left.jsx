@@ -29,7 +29,7 @@ function LeftSideBar() {
                   <IconButton>
                      <HomeRoundedIcon />
                      <Typography level="title-lg">
-                        <Link to="/" underline="none">Home</Link>
+                        <Link variant="plain" to="/" underline="none">Home</Link>
                      </Typography>
                   </IconButton>
                </MenuItem>
@@ -37,7 +37,7 @@ function LeftSideBar() {
                   <IconButton>
                      <NotificationsRoundedIcon />
                      <Typography level="title-lg">
-                        <Link href="#" underline="none">Notification</Link>
+                        <Link variant="plain" href="#" underline="none">Notification</Link>
                      </Typography>
                   </IconButton>
                </MenuItem>
@@ -45,7 +45,7 @@ function LeftSideBar() {
                <IconButton>
                   <AccountCircleRoundedIcon />
                   <Typography level="title-lg">
-                     <Link href="#" underline="none">Profile</Link>
+                     <Link variant="plain" href="#" underline="none">Profile</Link>
                   </Typography>               
                </IconButton>
                </MenuItem>

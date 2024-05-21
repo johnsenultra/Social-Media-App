@@ -118,7 +118,7 @@ export default function Signin() {
                <GlobalStyles 
                   styles={{
                      ':root': {
-                        '--Collapsed-breakpoint': '769px', // form will stretch when viewport is below '769px'
+                        '--Collapsed-breakpoint': '100px', // form will stretch when viewport is below '769px'
                         '--Cover-width': '50vw', // must be `vw` only
                         '--Form-maxWidth': '800px', // 
                         '--Transition-duration': '0.4s', // set to `none` to diable
